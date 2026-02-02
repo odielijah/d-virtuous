@@ -19,10 +19,18 @@ gsap.registerPlugin(ScrollTrigger);
 function App() {
   const lenis = useLenis(({ scroll }) => {});
 
+  const handleScrollToSection = (e, id) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <ReactLenis root>
       <>
-        <Header />
+        <Header handleScrollToSection={handleScrollToSection} />
 
         <main className="z-[4] flex mx-auto flex-col place-content-center gap-0 p-0 relative flex-none items-center w-full h-min">
           <Hero />
@@ -34,7 +42,7 @@ function App() {
           <Donate />
         </main>
 
-        <Footer />
+        <Footer handleScrollToSection={handleScrollToSection} />
       </>
     </ReactLenis>
   );

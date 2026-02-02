@@ -1,15 +1,30 @@
-export default function Footer() {
+import { navLinks } from "../../data/navLinksData";
+
+export default function Footer({ handleScrollToSection }) {
   return (
-    <footer className="w-full bg-black z-[2] relative pb-10 text-white/50 text-[16px] poppins max-md:pb-[20px]">
-      <div className="flex items-center justify-between mx-auto max-w-[1560px] border-t pt-5 border-white/10 max-md:flex-col-reverse max-md:text-center max-md:gap-[5px]">
-        <p className="w-[33.3%] max-md:w-full max-md:text-[12px]">© 2025 Redo | All Rights Reserved.</p>
-        <p className="w-[33.3%] text-white max-md:w-full">
-          founders@redomedia.co
+    <footer className="w-full bg-black z-[2] relative text-white/50 text-[16px] poppins-light mx-auto">
+      <div className="flex items-center justify-between mx-auto p-7 max-w-[1560px] border-t border-white/10 max-md:flex-col-reverse max-md:text-center max-md:gap-[20px]">
+        <p className="w-auto max-md:w-full max-lg:text-[13px]">
+          © 2026 D'virtuous | All Rights Reserved.
         </p>
-        <div className="flex gap-8 items-center max-md:hidden">
-          <span>Services</span>
-          <span>Journey</span>
-          <span>Testimonials</span>
+        <p className="w-auto text-white max-md:w-full max-lg:text-[13px]">
+          founders@dvirtuous.co
+        </p>
+        <div className="flex items-center gap-10">
+          {navLinks.map((link) => (
+            <div
+              key={link.id}
+              className="max-md:hidden max-lg:text-[13px] max-md:gap-4"
+            >
+              <a
+                href={link.id}
+                className="hover:text-white transition-colors duration-300 cursor-pointer"
+                onClick={(e) => handleScrollToSection(e, link.id)}
+              >
+                {link.name}
+              </a>
+            </div>
+          ))}
         </div>
       </div>
     </footer>

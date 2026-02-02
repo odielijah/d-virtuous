@@ -68,7 +68,7 @@ export default function Hero() {
           id="hero-text-content"
           className="flex [text-shadow:0_0_12px_#ffffffb5] max-md:text-white pointer-events-none text-[#ffffffb5] justify-center text-center items-center flex-col h-full gap-[8px] w-full opacity-90 z-[2] relative"
         >
-          <p className="georgia-pro-light text-[50px] leading-[1] tracking-[-0.02em]
+          <p className="georgia-pro-light xl:text-[50px] leading-[1] tracking-[-0.02em]
           md:text-[40px] min-[300px]:text-[30px]">
             {" "}
             Imagine a space

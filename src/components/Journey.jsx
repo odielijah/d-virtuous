@@ -191,10 +191,10 @@ export default function Journey() {
                 ${getBorderRadiusClass(index, journeyData.length)}
                 max-[1000px]:w-full max-[1000px]:max-w-[400px] max-[1000px]:m-[0_auto] max-[1000px]:rounded-[20px]`}
             >
-              {/* Front: Image */}
+              {/* Front: Image - Hide on mobile */}
               <div
                 id="card-front"
-                className="absolute w-full h-full [backface-visibility:hidden] [border-radius:inherit] overflow-hidden"
+                className="absolute w-full h-full [backface-visibility:hidden] [border-radius:inherit] overflow-hidden max-[1000px]:hidden"
               >
                 <img
                   src={card.image}
@@ -203,20 +203,26 @@ export default function Journey() {
                 />
               </div>
 
-              {/* Back: Details */}
+              {/* Back: Details - Show on mobile without flip */}
               <div
                 id="card-back"
-                className={`absolute shadow-[0_30px_80px_7px_rgba(0,0,0,0.35)] poppins w-full h-full [backface-visibility:hidden] [border-radius:inherit] overflow-hidden flex flex-col justify-between items-start [transform:rotateY(180deg)] p-8 max-[1000px]:transform-none ${card.bgColor} ${card.textColor}`}
+                className={`absolute shadow-[0_30px_80px_7px_rgba(0,0,0,0.35)] poppins w-full h-full [backface-visibility:hidden] [border-radius:inherit] overflow-hidden flex flex-col justify-between items-start [transform:rotateY(180deg)] p-7 xl:p-9 max-[1000px]:[transform:rotateY(0deg)] max-[1000px]:[backface-visibility:visible]
+                ${card.bgColor} ${card.textColor}`}
               >
                 <span className="opacity-40 text-sm font-medium">
                   {card.step}
                 </span>
 
-                <h2 className="text-[30px] leading-[1] max-w-[200px] my-auto">
+                <h2
+                  className="text-[22px] md:text-[26px] xl:text-[30px] leading-[1.1] max-w-[200px] my-auto"
+                >
                   {card.title}
                 </h2>
 
-                <p className="text-[12px] w-full">{card.description}</p>
+                {/* DESCRIPTION */}
+                <p className="text-[11px] xl:text-[12px] w-full leading-[1.2]">
+                  {card.description}
+                </p>
               </div>
             </div>
           ))}

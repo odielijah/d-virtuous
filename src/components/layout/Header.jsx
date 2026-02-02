@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
+import { navLinks } from "../../data/navLinksData";
 
-export default function Header() {
+export default function Header({handleScrollToSection}) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      // If user scrolls down more than 50px, activate the shrink effect
+      // If user scrolls down more than 50px, let header shrink
       if (window.scrollY > 600) {
         setIsScrolled(true);
       } else {
@@ -16,20 +17,6 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const handleScrollToSection = (e, id) => {
-    e.preventDefault();
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const navLinks = [
-    { name: "Journey", id: "journey" },
-    { name: "Services", id: "services" },
-    { name: "Reviews", id: "reviews" },
-  ];
 
   return (
     <header>
@@ -56,7 +43,7 @@ export default function Header() {
                   // Force scroll to absolute top
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
-                className="opacity-80 text-[24px] georgia-pro-italic hover:opacity-100 transition-opacity duration-300"
+                className="opacity-80 text-[24px] georgia-pro-italic hover:opacity-100 transition-opacity duration-300 max-md:text-[18px]"
               >
                 D'virtuous
               </a>
