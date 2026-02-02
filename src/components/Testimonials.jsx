@@ -7,10 +7,9 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
 
 // Assuming this data structure based on your current code
-// Example: { id: 1, name: "Shrikant Damani", role: "Founder's office @ 91Ninjas", quote: "...", company: "9INJAS", image: "..." }
 import { rawTestimonials } from "../data/rawTestimonials";
 
-const testimonials = [...rawTestimonials, ...rawTestimonials];
+const testimonials = [...rawTestimonials, ...rawTestimonials, ...rawTestimonials, ...rawTestimonials];
 
 export default function Testimonials() {
   const swiperRef = useRef(null);
@@ -153,35 +152,7 @@ export default function Testimonials() {
         </div>
 
         <style jsx global>{`
-          .swiper-slide-active {
-            opacity: 1 !important;
-            filter: blur(0px) !important;
-            z-index: 10;
-          }
-
-          .swiper-button-prev,
-          .swiper-button-next {
-            display: none !important;
-          }
-
-          @media (min-width: 768px) {
-            .swiper-button-prev,
-            .swiper-button-next {
-              display: flex !important;
-              background-color: rgba(255, 255, 255, 0.05);
-              width: 50px;
-              height: 50px;
-              padding: 15px;
-              border-radius: 50%;
-              border: 1px solid rgba(255, 255, 255, 0.1);
-              color: white;
-              transition: 0.3s;
-            }
-            .swiper-button-prev:after,
-            .swiper-button-next:after { font-size: 18px; }
-            .swiper-button-prev { left: -75px !important; }
-            .swiper-button-next { right: -75px !important; }
-          }
+          
         `}</style>
       </div>
     </section>

@@ -5,6 +5,8 @@ import { useRef } from "react";
 
 import { journeyData } from "../data/journeyData";
 
+gsap.registerPlugin(ScrollTrigger, useGSAP);
+
 export default function Journey() {
   const sectionRef = useRef(null);
 
@@ -192,10 +194,7 @@ export default function Journey() {
                 max-[1000px]:w-full max-[1000px]:max-w-[400px] max-[1000px]:m-[0_auto] max-[1000px]:rounded-[20px]`}
             >
               {/* Front: Image */}
-              <div
-                id="card-front"
-                className="absolute w-full h-full [backface-visibility:hidden] [border-radius:inherit] overflow-hidden"
-              >
+              <div className="absolute w-full h-full [backface-visibility:hidden] [border-radius:inherit] overflow-hidden">
                 <img
                   src={card.image}
                   alt={card.title}
@@ -205,7 +204,6 @@ export default function Journey() {
 
               {/* Back: Details */}
               <div
-                id="card-back"
                 className={`absolute shadow-[0_30px_80px_7px_rgba(0,0,0,0.35)] poppins w-full h-full [backface-visibility:hidden] [border-radius:inherit] overflow-hidden flex flex-col justify-between items-start [transform:rotateY(180deg)] p-7 xl:p-9 max-[1000px]:transform-none
                 ${card.bgColor} ${card.textColor}`}
               >
@@ -213,9 +211,7 @@ export default function Journey() {
                   {card.step}
                 </span>
 
-                <h2
-                  className="text-[22px] md:text-[26px] xl:text-[30px] leading-[1.1] max-w-[200px] my-auto"
-                >
+                <h2 className="text-[22px] md:text-[26px] xl:text-[30px] leading-[1.1] max-w-[200px] my-auto">
                   {card.title}
                 </h2>
 
