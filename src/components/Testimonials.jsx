@@ -22,7 +22,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="reviews" className="bg-black z-[2] w-full overflow-hidden">
+    <section id="reviews" className="bg-black z-[2] w-full overflow-hidden my-[-5px]">
       <div className="w-full relative text-white flex flex-col justify-center py-15 md:py-20">
         
         {/* Header */}

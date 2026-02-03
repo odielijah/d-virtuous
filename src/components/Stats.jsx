@@ -4,7 +4,7 @@ import { statsData } from "../data/statsData";
 
 export default function Stats() {
   return (
-    <section className="w-full bg-black z-[2] relative py-10 md:py-20 text-white">
+    <section className="w-full bg-black z-[2] relative py-10 md:py-20 text-white my-[-5px]">
       <div className="w-full max-w-5xl mx-auto px-10 md:px-0">
         {statsData.map((stat, index) => (
           <div
