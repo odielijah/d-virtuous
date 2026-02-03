@@ -7,9 +7,12 @@ export default function Footer({ handleScrollToSection }) {
         <p className="w-auto max-md:w-full max-lg:text-[13px]">
           © 2026 D'virtuous | All Rights Reserved.
         </p>
-        <p className="w-auto text-white max-md:w-full max-lg:text-[13px]">
+        <a 
+          href="mailto:founders@dvirtuous.co"
+          className="w-auto text-white max-md:w-full max-lg:text-[13px] hover:opacity-80 transition-opacity duration-300"
+        >
           founders@dvirtuous.co
-        </p>
+        </a>
         <div className="flex items-center gap-10">
           {navLinks.map((link) => (
             <div

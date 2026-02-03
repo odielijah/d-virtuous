@@ -150,10 +150,6 @@ export default function Testimonials() {
             })}
           </div>
         </div>
-
-        <style jsx global>{`
-          
-        `}</style>
       </div>
     </section>
   );
