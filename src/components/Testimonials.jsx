@@ -27,10 +27,10 @@ export default function Testimonials() {
         
         {/* Header */}
         <div className="text-center mb-8 md:mb-12 relative z-10 px-4">
-          <h2 className="text-white text-[clamp(28px,5vw,60px)] georgia-pro-light leading-[1.2] md:leading-[1.1] [text-shadow:0_0_10px_rgba(255,255,255,0.8)] tracking-[-0.02em] mb-4">
+          <h2 className="text-white max-[1000px]:text-[45px] text-[60px] georgia-pro-light leading-[1] md:leading-[1.1] [text-shadow:0_0_10px_rgba(255,255,255,0.8)] tracking-[-0.02em] mb-4">
             Hear <span className="italic">from</span> our partners
           </h2>
-          <p className="text-white/60 font-body font-light text-[clamp(14px,1.5vw,16px)] poppins-light max-w-md mx-auto">
+          <p className="text-white/60 text-[14px] poppins-light max-w-[250px] text-center">
             With over 60 clients served, here's what they have to say
           </p>
         </div>
