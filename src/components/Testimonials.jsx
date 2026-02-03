@@ -30,7 +30,7 @@ export default function Testimonials() {
           <h2 className="text-white max-[1000px]:text-[45px] text-[60px] georgia-pro-light leading-[1] md:leading-[1.1] [text-shadow:0_0_10px_rgba(255,255,255,0.8)] tracking-[-0.02em] mb-4">
             Hear <span className="italic">from</span> our partners
           </h2>
-          <p className="text-white/60 text-[14px] poppins-light max-w-[250px] text-center">
+          <p className="text-white/60 text-[14px] poppins-light max-w-[250px] mx-auto text-center">
             With over 60 clients served, here's what they have to say
           </p>
         </div>
