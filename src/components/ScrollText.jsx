@@ -61,6 +61,11 @@ const TextReveal = () => {
 };
 
 export default function ScrollText() {
+  // 1. Create a "Block" of logos that is wide enough to cover the screen.
+  // Repeating it 3-4 times is usually enough for large desktop screens.
+  // This reduces the DOM size compared to your previous 10x loop.
+  const logosBlock = [...brands, ...brands, ...brands, ...brands];
+
   return (
     <section
       id="scroll-text"
@@ -70,9 +75,7 @@ export default function ScrollText() {
         backgroundSize: "30px 30px",
       }}
     >
-      <div
-        className="relative z-10 flex-1 w-full text-white p-10 max-md:p-4 flex justify-center items-center leading-[1] text-center georgia-pro-light text-[40px] min-[1000px]:text-[55px] min-[1300px]:text-[67px]"
-      >
+      <div className="relative z-10 flex-1 w-full text-white p-10 max-md:p-4 flex justify-center items-center leading-[1] text-center georgia-pro-light text-[40px] min-[1000px]:text-[55px] min-[1300px]:text-[67px]">
         <TextReveal />
       </div>
 
@@ -87,24 +90,30 @@ export default function ScrollText() {
           <RightWreath className="max-md:w-[25px]" />
         </div>
 
-        {/* We use flex-1 to let this section take up all remaining space */}
+        {/* MARQUEE WRAPPER */}
         <div className="flex-1 overflow-hidden relative [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
           <motion.div
             initial={{ x: 0 }}
             animate={{ x: "-50%" }}
             transition={{
-              duration: 30, // Adjust speed (higher = slower)
+              duration: 30,
               ease: "linear",
               repeat: Infinity,
             }}
-            className="flex items-center gap-12 pr-12 w-max"
+            // Added will-change-transform for smoother mobile performance
+            className="flex items-center w-max will-change-transform"
           >
-            {/* We render the list twice to create the perfect loop */}
-            {[...brands, ...brands, ...brands, ...brands,  ...brands,  ...brands,  ...brands,  ...brands].map(
-              (brand, index) => (
+            {/* THE FIX: Render TWO identical blocks.
+               We animate the parent to -50%. 
+               At -50%, Block 1 is gone, and Block 2 is exactly where Block 1 started.
+               The reset happens instantly and invisibly.
+            */}
+            
+            {/* Block 1 */}
+            <div className="flex items-center gap-12 pr-12">
+              {logosBlock.map((brand, index) => (
                 <span
-                  // Use index in key to ensure unique keys when duplicating
-                  key={`${brand.name}-${index}`}
+                  key={`b1-${index}`} // Unique keys
                   className={`
                     ${brand.className} 
                     text-[30px] 
@@ -119,8 +128,30 @@ export default function ScrollText() {
                 >
                   {brand.name}
                 </span>
-              ),
-            )}
+              ))}
+            </div>
+
+            {/* Block 2 (Identical Copy) */}
+            <div className="flex items-center gap-12 pr-12">
+              {logosBlock.map((brand, index) => (
+                <span
+                  key={`b2-${index}`} // Unique keys
+                  className={`
+                    ${brand.className} 
+                    text-[30px] 
+                    flex-shrink-0 
+                    opacity-60 
+                    hover:grayscale-0 
+                    hover:opacity-100 
+                    transition-all 
+                    duration-500
+                    cursor-pointer
+                  `}
+                >
+                  {brand.name}
+                </span>
+              ))}
+            </div>
           </motion.div>
         </div>
       </div>
