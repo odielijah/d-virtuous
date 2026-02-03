@@ -19,13 +19,11 @@
   filter: blur(0px) !important;
   z-index: 10;
 }
-
 /* Hide buttons on Mobile */
 .swiper-button-prev,
 .swiper-button-next {
   display: none !important;
 }
-
 /* Show and Style buttons on Desktop */
 @media (min-width: 768px) {
   .swiper-button-prev,
@@ -37,7 +35,7 @@
     padding: 15px;
     border-radius: 50%;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    color: white !important; 
+    color: white !important;
     transition: 0.3s;
     z-index: 10;
   }
@@ -49,7 +47,7 @@
   }
 
   .swiper-button-prev {
-    left: -50px !important; 
+    left: -50px !important;
   }
   .swiper-button-next {
     right: -50px !important;
@@ -66,4 +64,20 @@
   .swiper-button-next {
     display: none !important;
   }
+}
+
+/* Scroll Text */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.animate-scroll {
+  animation: scroll 50s linear infinite;
+  will-change: transform;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
 }

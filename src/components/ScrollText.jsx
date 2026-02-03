@@ -1,25 +1,21 @@
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { motion } from "framer-motion";
-
+// Removed Framer Motion imports as we are using CSS now
 import { LeftWreath, RightWreath } from "../components/icons/Wreaths";
 import { brands } from "../data/brandLogos";
 
-// --- TextReveal Reusuable Component ---
+// --- TextReveal (Unchanged) ---
 const TextReveal = () => {
   const container = useRef(null);
   const text =
     "We craft brand identities, narratives, and digital experiences that keep up with your ambition. So you can focus on building what matters, while we shape how the world sees it.";
-
   const words = text.split(" ");
 
   useGSAP(
     () => {
-      const chars = container.current.querySelectorAll(".char");
-
       gsap.fromTo(
-        chars,
+        ".char",
         { opacity: 0.4, color: "#555" },
         {
           opacity: 1,
@@ -61,10 +57,9 @@ const TextReveal = () => {
 };
 
 export default function ScrollText() {
-  // 1. Create a "Block" of logos that is wide enough to cover the screen.
-  // Repeating it 3-4 times is usually enough for large desktop screens.
-  // This reduces the DOM size compared to your previous 10x loop.
-  const logosBlock = [...brands, ...brands, ...brands, ...brands];
+  // OPTIMIZATION: Since you have 20 brands, you do NOT need to duplicate them here.
+  // 20 items is plenty wide. The simpler the DOM, the smoother the scroll on mobile.
+  const logosBlock = [...brands, ...brands];
 
   return (
     <section
@@ -79,8 +74,8 @@ export default function ScrollText() {
         <TextReveal />
       </div>
 
-      {/* BOTTOM SECTION */}
       <div className="w-full flex items-center justify-center gap-[50px] max-w-[1400px] mx-auto text-white pb-[5rem] px-10 max-md:flex-col">
+        {/* Wreath */}
         <div className="flex items-center gap-3 opacity-70 select-none shrink-0">
           <LeftWreath className="max-md:w-[25px]" />
           <div className="text-center poppins leading-[1.3] text-[14px] max-md:text-[12px]">
@@ -92,33 +87,22 @@ export default function ScrollText() {
 
         {/* MARQUEE WRAPPER */}
         <div className="flex-1 overflow-hidden relative [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-          <motion.div
-            initial={{ x: 0 }}
-            animate={{ x: "-50%" }}
-            transition={{
-              duration: 30,
-              ease: "linear",
-              repeat: Infinity,
-            }}
-            // Added will-change-transform for smoother mobile performance
-            className="flex items-center w-max will-change-transform"
-          >
-            {/* THE FIX: Render TWO identical blocks.
-               We animate the parent to -50%. 
-               At -50%, Block 1 is gone, and Block 2 is exactly where Block 1 started.
-               The reset happens instantly and invisibly.
-            */}
-            
+          {/* CHANGED: Used standard div with .animate-scroll class 
+             This runs on the GPU thread, fixing the lag.
+          */}
+          <div className="flex items-center w-max animate-scroll hover:[animation-play-state:paused]">
             {/* Block 1 */}
-            <div className="flex items-center gap-12 pr-12">
+            <div className="flex items-center">
               {logosBlock.map((brand, index) => (
                 <span
-                  key={`b1-${index}`} // Unique keys
+                  key={`b1-${index}`}
                   className={`
                     ${brand.className} 
+                    mr-16 /* USE MARGIN ONLY - NO GAPS */
                     text-[30px] 
                     flex-shrink-0 
                     opacity-60 
+                    whitespace-nowrap 
                     hover:grayscale-0 
                     hover:opacity-100 
                     transition-all 
@@ -132,15 +116,17 @@ export default function ScrollText() {
             </div>
 
             {/* Block 2 (Identical Copy) */}
-            <div className="flex items-center gap-12 pr-12">
+            <div className="flex items-center">
               {logosBlock.map((brand, index) => (
                 <span
-                  key={`b2-${index}`} // Unique keys
+                  key={`b2-${index}`}
                   className={`
                     ${brand.className} 
+                    mr-16 /* USE MARGIN ONLY */
                     text-[30px] 
                     flex-shrink-0 
                     opacity-60 
+                    whitespace-nowrap 
                     hover:grayscale-0 
                     hover:opacity-100 
                     transition-all 
@@ -152,7 +138,7 @@ export default function ScrollText() {
                 </span>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
