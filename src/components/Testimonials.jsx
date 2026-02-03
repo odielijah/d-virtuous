@@ -23,7 +23,7 @@ export default function Testimonials() {
 
   return (
     <section id="reviews" className="bg-black z-[2] w-full overflow-hidden">
-      <div className="min-h-screen w-full relative text-white flex flex-col justify-center py-12 md:py-20">
+      <div className="w-full relative text-white flex flex-col justify-center py-15 md:py-20">
         
         {/* Header */}
         <div className="text-center mb-8 md:mb-12 relative z-10 px-4">
