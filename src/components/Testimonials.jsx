@@ -27,7 +27,7 @@ export default function Testimonials() {
         
         {/* Header */}
         <div className="text-center mb-8 md:mb-12 relative z-10 px-4">
-          <h2 className="text-white max-[1000px]:text-[45px] text-[60px] georgia-pro-light leading-[1] md:leading-[1.1] [text-shadow:0_0_10px_rgba(255,255,255,0.8)] tracking-[-0.02em] mb-4">
+          <h2 className="text-white max-lg:text-[35px] text-[60px] georgia-pro-light leading-[1] md:leading-[1.1] [text-shadow:0_0_10px_rgba(255,255,255,0.8)] tracking-[-0.02em] mb-4">
             Hear <span className="italic">from</span> our partners
           </h2>
           <p className="text-white/60 text-[14px] poppins-light max-w-[250px] mx-auto text-center">

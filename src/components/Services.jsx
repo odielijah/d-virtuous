@@ -16,7 +16,7 @@ export default function Services() {
       <div className="w-full max-w-[1220px] mx-auto px-10 max-md:px-5">
         {/* --- Header Section --- */}
         <div className="flex justify-center flex-col items-center w-full mb-24 max-md:mb-12">
-          <h1 className="text-[60px] leading-[1] georgia-pro-light [text-shadow:0_0_10px_rgba(255,255,255,0.8)] text-center tracking-[-0.02em] mb-4 max-[1000px]:text-[45px]">
+          <h1 className="text-[60px] leading-[1] georgia-pro-light [text-shadow:0_0_10px_rgba(255,255,255,0.8)] text-center tracking-[-0.02em] mb-4 max-lg:text-[35px]">
             <span className="italic">With</span> our services
           </h1>
           <p className="text-center text-[14px] opacity-60 poppins-light max-w-[250px] font-light">
@@ -52,7 +52,7 @@ export default function Services() {
                   <h1
                     className="
                         georgia-pro-light leading-tight [text-shadow:0_0_15px_rgba(255,255,255,0.5)]
-                        text-[32px] lg:text-[40px] max-[400px]:text-[28px]
+                        text-[32px] lg:text-[40px] max-[400px]:text-[22px]
                       "
                   >
                     {service.title}
