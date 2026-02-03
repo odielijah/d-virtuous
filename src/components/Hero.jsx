@@ -46,7 +46,7 @@ export default function Hero() {
     <section
       id="hero"
       className="p-[32px] sticky pointer-events-none flex flex-col flex-none items-center gap-[32px] z-[2] w-full h-screen max-h-[1000px] top-0 overflow-hidden
-      max-xl:p-[16px] max-lg:max-h-[640px]"
+      max-xl:p-[16px] max-lg:max-h-[650px]"
     >
       <div
         id="rounded-container"
