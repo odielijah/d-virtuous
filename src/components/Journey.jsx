@@ -183,7 +183,7 @@ export default function Journey() {
 
         <div
           id="card-container"
-          className="relative w-[75%] flex [will-change:width] translate-y-[40px] [perspective:1000px] max-[1000px]:p-[4rem_2rem] max-[1000px]:w-full max-[1000px]:gap-[2rem] max-[750px]:flex-col"
+          className="relative w-[75%] flex [will-change:width] translate-y-[40px] [perspective:1000px] max-[1000px]:p-[1rem_2rem] max-[1000px]:w-full max-[1000px]:gap-[2rem] max-[750px]:flex-col"
         >
           {journeyData.map((card, index) => (
             <div
