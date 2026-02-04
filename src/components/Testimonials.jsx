@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Navigation } from "swiper/modules";
+import { motion } from "framer-motion";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -9,7 +10,12 @@ import "swiper/css/navigation";
 // Assuming this data structure based on your current code
 import { rawTestimonials } from "../data/rawTestimonials";
 
-const testimonials = [...rawTestimonials, ...rawTestimonials, ...rawTestimonials, ...rawTestimonials];
+const testimonials = [
+  ...rawTestimonials,
+  ...rawTestimonials,
+  ...rawTestimonials,
+  ...rawTestimonials,
+];
 
 export default function Testimonials() {
   const swiperRef = useRef(null);
@@ -21,19 +27,53 @@ export default function Testimonials() {
     }
   };
 
+  // Define variants outside the return for cleaner code
+  const containerVariants = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
+      },
+    },
+  };
+  const itemVariants = {
+    hidden: { y: 40, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+    },
+  };
+
   return (
-    <section id="reviews" className="bg-black z-[2] w-full overflow-hidden my-[-5px]">
+    <section
+      id="reviews"
+      className="bg-black z-[2] w-full overflow-hidden my-[-5px]"
+    >
       <div className="w-full min-h-screen relative text-white flex flex-col justify-center py-15 md:py-20">
-        
         {/* Header */}
-        <div className="text-center mb-8 md:mb-12 relative z-10 px-4">
-          <h2 className="text-white max-lg:text-[35px] text-[60px] georgia-pro-light leading-[1] md:leading-[1.1] [text-shadow:0_0_10px_rgba(255,255,255,0.8)] tracking-[-0.02em] mb-4">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
+          variants={containerVariants}
+          className="text-center mb-8 md:mb-12 relative z-10 px-4"
+        >
+          <motion.h1
+            variants={itemVariants}
+            className="text-white max-lg:text-[35px] text-[60px] georgia-pro-light leading-[1] md:leading-[1.1] [text-shadow:0_0_10px_rgba(255,255,255,0.8)] tracking-[-0.02em] mb-4"
+          >
             Hear <span className="italic">from</span> our partners
-          </h2>
-          <p className="text-white/60 text-[14px] poppins-light max-w-[250px] mx-auto text-center">
+          </motion.h1>
+          <motion.p
+            variants={itemVariants}
+            className="text-white/60 text-[14px] poppins-light max-w-[250px] mx-auto text-center"
+          >
             With over 60 clients served, here's what they have to say
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Swiper Container */}
         <div className="w-full max-w-[min(92vw,850px)] mx-auto px-4 relative z-10">
@@ -119,7 +159,7 @@ export default function Testimonials() {
                             {item.role}
                           </p>
                         </div>
-                        
+
                         {/* Company Logo/Text (Always bottom right) */}
                         <span className="text-white/40 text-[14px] md:text-[clamp(10px,1.1vw,12px)] font-bold tracking-widest uppercase">
                           {item.company}

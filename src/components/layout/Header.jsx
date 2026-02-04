@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { navLinks } from "../../data/navLinksData";
+import { easeInOut, motion } from "framer-motion";
 
 export default function Header({ handleScrollToSection }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,7 +32,14 @@ export default function Header({ handleScrollToSection }) {
 
   return (
     <header>
-      <div
+      <motion.div
+        initial={{ y: -200 }}
+        animate={{ y: 0 }}
+        transition={{
+          duration: 0.3,
+          delay: 0.1,
+          ease: easeInOut,
+        }}
         id="header-container"
         className={`
           fixed left-1/2 -translate-x-1/2 z-[50] text-[#eae7e0] poppins-light
@@ -139,7 +147,7 @@ export default function Header({ handleScrollToSection }) {
             </a>
           </div>
         </div>
-      </div>
+      </motion.div>
     </header>
   );
 }
