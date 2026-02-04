@@ -1,86 +1,142 @@
 import { useState, useEffect } from "react";
 import { navLinks } from "../../data/navLinksData";
 
-export default function Header({handleScrollToSection}) {
+export default function Header({ handleScrollToSection }) {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      // If user scrolls down more than 50px, let header shrink
-      if (window.scrollY > 600) {
-        setIsScrolled(true);
-      } else {
+      if (window.innerWidth < 768) {
         setIsScrolled(false);
+      } else {
+        setIsScrolled(window.scrollY > 600);
       }
+      if (window.scrollY > 100) setMenuOpen(false);
     };
-
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
+
+  const closeMenuAndScroll = (e, id) => {
+    setMenuOpen(false);
+
+    handleScrollToSection(e, id);
+  };
 
   return (
     <header>
       <div
         id="header-container"
-        // 1. Added dynamic max-width logic based on isScrolled state
-        // 2. Added 'transition-all duration-500 ease-in-out' for smooth animation
         className={`
-          fixed top-[48px] left-[50%] translate-x-[-50%] w-full z-[50] text-[#eae7e0] poppins-light
-          transition-all duration-500 ease-in-out max-xl:px-[35px] max-xl:top-[30px]
-          ${isScrolled ? "max-w-[750px] px-4" : "max-w-[1400px] px-[64px]"}
-        `}
+          fixed left-1/2 -translate-x-1/2 z-[50] text-[#eae7e0] poppins-light
+          transition-all duration-500 ease-in-out top-[48px] ${
+            isScrolled
+              ? "max-w-[750px] px-4"
+              : "max-w-[1400px] px-[64px] max-xl:px-[35px] max-xl:top-[30px]"
+          } w-full`}
       >
-        <div id="nav-menu">
-          <div
-            id="nav-content"
-            className="flex justify-between items-center w-full backdrop-blur-[10px] bg-[rgba(3,3,3,0.3)] rounded-[14px] shadow-[inset_0_1px_1px_1px_rgba(255,255,255,0.1)] p-[10px_10px_10px_24px]"
-          >
-            <div id="logo">
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  // Force scroll to absolute top
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                }}
-                className="opacity-80 text-[24px] georgia-pro-italic hover:opacity-100 transition-opacity duration-300 max-md:text-[18px]"
-              >
-                D'virtuous
-              </a>
-            </div>
-
-            <div>
-              <div
-                id="nav-menu-items"
-                className="flex gap-[40px] text-[14px] tracking-[0.02em] opacity-80 [text-shadow:0_0_10px_rgba(255,255,255,0.4)]"
-              >
-                {navLinks.map((link) => (
-                  <button
-                    key={link.name}
-                    onClick={(e) => handleScrollToSection(e, link.id)}
-                    className="cursor-pointer hover:opacity-100 hover:text-white transition-opacity duration-300 max-md:hidden"
-                  >
-                    {link.name}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div
-              className="text-[14px] poppins tracking-[0.02em] text-black bg-[#eae7e0] p-[5px_20px] rounded-[8px] duration-300 ease-in-out hover:bg-white cursor-pointer
-            max-md:hidden"
+        <div
+          id="nav-content"
+          className="relative flex justify-between items-center w-full backdrop-blur-md bg-black/30 rounded-2xl shadow-[inset_0_1px_1px_1px_rgba(255,255,255,0.1)] p-3 pl-6"
+        >
+          <div id="logo" className="relative z-[999]">
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                setMenuOpen(false);
+              }}
+              className={`text-2xl georgia-pro-italic opacity-80 hover:opacity-100 transition-opacity max-md:text-[23px] ${
+                menuOpen ? "opacity-100" : ""
+              }`}
             >
-              <a href="#">Donate</a>
-            </div>
+              D'virtuous
+            </a>
+          </div>
+
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex gap-10 text-sm tracking-wide opacity-80">
+            {navLinks.map((link) => (
+              <button
+                key={link.name}
+                onClick={(e) => handleScrollToSection(e, link.id)}
+                className="hover:opacity-100 hover:text-white transition-all duration-300"
+              >
+                {link.name}
+              </button>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-4">
+            <a
+              href="#donate"
+              className="hidden md:block text-sm poppins font-medium text-black bg-[#eae7e0] px-5 py-1.5 rounded-lg hover:bg-white transition-colors"
+            >
+              Donate
+            </a>
 
             <div
               id="hamburger"
-              className="z-[99] relative cursor-pointer mr-[24px] mr-[24px] hidden max-md:block"
-              onClick={() => {}}
+              className={`z-[999] relative cursor-pointer mr-[24px] hidden max-md:block`}
+              onClick={() => {
+                setMenuOpen(!menuOpen);
+              }}
             >
-              <span className="block rounded-[5px] w-[20px] h-[2px] my-[5px] mx-auto bg-white duration-300 ease-in-out opacity-70"></span>
-              <span className="block rounded-[5px] w-[20px] h-[2px] my-[5px] mx-auto bg-white duration-300 ease-in-out opacity-70"></span>
+              <span
+                className={`block rounded-[5px] w-[20px] h-[2px] my-[5px] mx-auto bg-white duration-300 ease-in-out opacity-70 ${
+                  menuOpen ? "translate-y-[3.5px] rotate-[45deg]" : ""
+                }`}
+              ></span>
+
+              <span
+                className={`block rounded-[5px] w-[20px] h-[2px] my-[5px] mx-auto bg-white duration-300 ease-in-out opacity-70 ${
+                  menuOpen ? "translate-y-[-3.5px] rotate-[-45deg]" : ""
+                }`}
+              ></span>
             </div>
+          </div>
+
+          {/* Mobile Nav */}
+          <div
+            className={`
+            absolute top-full mt-1 right-0 w-[220px] 
+            flex flex-col gap-5 p-6 md:hidden z-[998]
+            backdrop-blur-xl
+            bg-black/80
+            rounded-2xl
+            shadow-[0_20px_50px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.2)] transition-all duration-400 ease-in-out ${
+              menuOpen
+                ? "opacity-100 translate-y-0 scale-100 pointer-events-auto"
+                : "opacity-0 -translate-y-4 scale-95 pointer-events-none"
+            }`}
+          >
+            <nav className="flex flex-col gap-4">
+              {navLinks.map((link) => (
+                <button
+                  key={link.name}
+                  onClick={(e) => closeMenuAndScroll(e, link.id)}
+                  className="text-left text-[14px] poppind text-[#eae7e0]/80 hover:text-white transition-colors"
+                >
+                  {link.name}
+                </button>
+              ))}
+            </nav>
+
+            {/* Divider line inside the glass */}
+            <div className="h-[1px] w-full bg-white/10" />
+            <a
+              href="#donate"
+              className="text-center text-black text-[14px] poppins bg-[#eae7e0] py-2.5 rounded-xl hover:bg-white transition-all active:scale-95"
+            >
+              Donate
+            </a>
           </div>
         </div>
       </div>

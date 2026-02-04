@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* 1. Hero Animation */
+/* Hero Animation */
 @keyframes shimmer {
   from {
     background-position: 200% 0;
@@ -19,12 +19,10 @@
   filter: blur(0px) !important;
   z-index: 10;
 }
-/* Hide buttons on Mobile */
 .swiper-button-prev,
 .swiper-button-next {
   display: none !important;
 }
-/* Show and Style buttons on Desktop */
 @media (min-width: 768px) {
   .swiper-button-prev,
   .swiper-button-next {

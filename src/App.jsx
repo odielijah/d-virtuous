@@ -11,6 +11,7 @@ import Journey from "./components/Journey";
 import Services from "./components/Services";
 import Testimonials from "./components/Testimonials";
 import Stats from "./components/Stats";
+import Founders from "./components/Founders";
 import Donate from "./components/Donate";
 import Footer from "./components/layout/Footer";
 
@@ -39,6 +40,7 @@ function App() {
           <Services />
           <Testimonials />
           <Stats />
+          <Founders />
           <Donate />
         </main>
 
