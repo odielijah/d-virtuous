@@ -1,4 +1,4 @@
-export const BibleVerses = [
+export const bibleVerses = [
   // --- Purpose & Call ---
   { text: "For I know the thoughts that I think toward you, says the Lord, thoughts of peace and not of evil, to give you a future and a hope.", ref: "Jeremiah 29:11" },
   { text: "The Lord will perfect that which concerns me; Your mercy, O Lord, endures forever.", ref: "Psalm 138:8" },

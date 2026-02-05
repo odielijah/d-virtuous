@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { LeftWreath, RightWreath } from "../assets/icons/Wreaths";
 import { brands } from "../data/brandLogos";
 
-import { BibleVerses } from "../data/bibleVerses";
+import { bibleVerses } from "../data/bibleVerses";
 
 // Animations
 const containerVariants = {
@@ -107,7 +107,7 @@ const TextReveal = ({ verse }) => {
 
 export default function ScrollText() {
   const selectedVerse = useMemo(() => {
-    return BibleVerses[Math.floor(Math.random() * BibleVerses.length)];
+    return bibleVerses[Math.floor(Math.random() * bibleVerses.length)];
   }, []);
 
   const logosBlock = [...brands, ...brands];
