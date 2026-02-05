@@ -2,7 +2,10 @@
 /* Georgia Pro Cond Italic */
 @font-face {
   font-family: "Georgia Pro Cond";
-  src: url("/fonts/GeorgiaProCond-Italic.woff2") format("woff2");
+  src:
+    local("Georgia Pro Cond Italic"),
+    local("GeorgiaProCond-Italic"),
+    url("/fonts/GeorgiaProCond-Italic.woff2") format("woff2");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -34,8 +37,11 @@ body {
 }
 
 /* fonts */
-.georgia-pro-cond {
+.georgia-pro-cond-italic {
   font-family: "Georgia Pro Cond", serif;
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
 }
 .georgia-pro-light {
   font-family: "Georgia Pro Light", serif;
