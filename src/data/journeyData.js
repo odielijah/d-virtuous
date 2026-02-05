@@ -10,7 +10,7 @@ export const journeyData = [
     description:
       "If you're navigating a new business unit, or a new venture entirely, or breaking into a new market.",
     image: firstCard,
-    bgColor: "bg-[#b2b2b2]",
+    bgColor: "bg-[linear-gradient(to_bottom_right,rgb(168,133,222)_0%,rgb(128,111,154)_100%)]",
     textColor: "text-black",
   },
   {
@@ -20,7 +20,7 @@ export const journeyData = [
     description:
       "If you've achieved Product/Service Market Fit, and are looking to scale your business to new heights.",
     image: secondCard,
-    bgColor: "bg-[#ce2017]",
+    bgColor: "bg-[linear-gradient(to_bottom_right,rgb(101,14,231)_0%,rgb(25,4,58)_100%)]",
     textColor: "text-white",
   },
   {
@@ -30,7 +30,7 @@ export const journeyData = [
     description:
       "If you know exactly what you want and need a team that can step in and quickly help you with it.",
     image: thirdCard,
-    bgColor: "bg-[#2f2f2f]",
+    bgColor: "bg-[linear-gradient(to_bottom_right,rgb(41,41,41)_0%,rgb(22,22,22)_100%)]",
     textColor: "text-white",
   },
 ];
