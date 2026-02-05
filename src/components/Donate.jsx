@@ -29,7 +29,7 @@ export default function Donate() {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: false, amount: 0.1 }}
         variants={containerVariants}
         className="w-full max-w-[1560px] mx-auto px-6 flex flex-col items-center text-center z-10 px-4"
       >

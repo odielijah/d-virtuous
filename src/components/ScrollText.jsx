@@ -2,7 +2,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 // Removed Framer Motion imports as we are using CSS now
-import { LeftWreath, RightWreath } from "../components/icons/Wreaths";
+import { LeftWreath, RightWreath } from "../assets/icons/Wreaths";
 import { brands } from "../data/brandLogos";
 
 // --- TextReveal (Unchanged) ---

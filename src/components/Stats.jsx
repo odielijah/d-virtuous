@@ -19,7 +19,7 @@ export default function Stats() {
           >
             {/* Number Section */}
             <div className="w-full md:w-auto md:min-w-[200px] flex justify-center md:justify-end">
-              <span className="georgia-pro-light text-[50px] md:text-[70px] leading-none text-white/90">
+              <span className="georgia-pro-light !italic text-[50px] md:text-[70px] leading-none text-white/90">
                 <CountUp
                   start={0}
                   end={stat.value}
