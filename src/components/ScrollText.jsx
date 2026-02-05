@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import { motion } from "framer-motion";
 import { LeftWreath, RightWreath } from "../assets/icons/Wreaths";
 import { brands } from "../data/brandLogos";
+
 import { bibleVerses } from "../data/bibleVerses";
 
 // Animations
