@@ -66,6 +66,7 @@ export default function Hero() {
           <div id="hero-img-container" className="absolute inset-0">
             <img
               src={heroImage}
+              loading="eager"
               alt=""
               className="block w-full h-full object-cover object-center rounded-inherit"
             />

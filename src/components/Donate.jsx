@@ -49,7 +49,7 @@ export default function Donate() {
         </motion.p>
         <motion.div 
         variants={itemVariants}
-        className="inline-block max-w-[1300px] h-[500px] px-10 py-4 w-full bg-[#ce2017] text-black rounded-[30px] poppins font-medium text-[16px] my-10 max-md:mb-0"></motion.div>
+        className="inline-block max-w-[1300px] h-[500px] px-10 py-4 w-full bg-[linear-gradient(to_bottom_right,rgb(101,14,231)_0%,rgb(25,4,58)_100%)] text-black rounded-[30px] poppins font-medium text-[16px] my-10 max-md:mb-0"></motion.div>
       </motion.div>
     </section>
   );

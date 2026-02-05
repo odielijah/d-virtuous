@@ -73,7 +73,7 @@ export default function Founders() {
             >
               {/* Profile Image with Red Glow Circle */}
               <div className="relative w-26 h-26 mb-3">
-                <div className="absolute inset-0 bg-[linear-gradient(rgb(255,34,0)_0%,rgb(132,2,6)_100%)] rounded-full" />
+                <div className="absolute inset-0 bg-[linear-gradient(rgb(101,14,231)_0%,rgb(71,17,153)_100%)] rounded-full" />
                 <div className="relative w-full h-full rounded-full overflow-hidden border-black/20">
                   <img
                     src={founder.image}
