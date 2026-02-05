@@ -4,8 +4,7 @@ import { useGSAP } from "@gsap/react";
 import { motion } from "framer-motion";
 import { LeftWreath, RightWreath } from "../assets/icons/Wreaths";
 import { brands } from "../data/brandLogos";
-
-import { bibleVerses } from "../data/bibleVerses";
+import BibleVerses from "../data/bibleVerses";
 
 // Animations
 const containerVariants = {
@@ -107,7 +106,7 @@ const TextReveal = ({ verse }) => {
 
 export default function ScrollText() {
   const selectedVerse = useMemo(() => {
-    return bibleVerses[Math.floor(Math.random() * bibleVerses.length)];
+    return BibleVerses[Math.floor(Math.random() * BibleVerses.length)];
   }, []);
 
   const logosBlock = [...brands, ...brands];
