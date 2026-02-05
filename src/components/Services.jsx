@@ -18,8 +18,8 @@ export default function Services() {
       x: 0,
       opacity: 1,
       transition: {
-        duration: 0.6,
-        ease: easeOut,
+        duration: 0.3,
+        ease: [0.22, 1, 0.36, 1],
       },
     },
   };
