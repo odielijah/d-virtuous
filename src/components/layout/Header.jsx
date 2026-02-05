@@ -61,7 +61,7 @@ export default function Header({ handleScrollToSection }) {
                 window.scrollTo({ top: 0, behavior: "smooth" });
                 setMenuOpen(false);
               }}
-              className={`text-2xl georgia-pro-italic opacity-80 hover:opacity-100 transition-opacity max-md:text-[23px] ${
+              className={`text-2xl georgia-pro-cond opacity-80 hover:opacity-100 transition-opacity max-md:text-[23px] ${
                 menuOpen ? "opacity-100" : ""
               }`}
             >

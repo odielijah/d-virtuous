@@ -1,5 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.cdnfonts.com/css/georgia-pro-cond");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+/* Georgia Pro Cond Italic */
+@font-face {
+  font-family: "Georgia Pro Cond";
+  src: url("/fonts/GeorgiaProCond-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Georgia Pro Light */
+@font-face {
+  font-family: "Georgia Pro Light";
+  src: url("/fonts/GeorgiaPro-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --swiper-navigation-color: #ffffff;
@@ -18,15 +34,11 @@ body {
 }
 
 /* fonts */
-.georgia-pro-italic {
-  font-family: "Georgia Pro Cond", sans-serif;
-  font-weight: 400;
-  font-style: italic;
+.georgia-pro-cond {
+  font-family: "Georgia Pro Cond", serif;
 }
 .georgia-pro-light {
-  font-family: "Georgia Pro Light", sans-serif;
-  font-weight: 300;
-  font-style: normal;
+  font-family: "Georgia Pro Light", serif;
 }
 .poppins-light {
   font-family: "Poppins", sans-serif;
