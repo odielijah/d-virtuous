@@ -60,7 +60,6 @@ export default function Journey() {
           scrub: 1,
           pin: true,
           pinSpacing: true,
-          anticipatePin: 1,
           onUpdate: (self) => {
             const progress = self.progress;
 

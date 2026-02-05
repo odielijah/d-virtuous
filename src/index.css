@@ -2,10 +2,7 @@
 /* Georgia Pro Cond Italic */
 @font-face {
   font-family: "Georgia Pro Cond";
-  src:
-    local("Georgia Pro Cond Italic"),
-    local("GeorgiaProCond-Italic"),
-    url("/fonts/GeorgiaProCond-Italic.woff2") format("woff2");
+  src: url("/fonts/GeorgiaProCond-Italic.woff2") format("woff2");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -45,6 +42,9 @@ body {
 }
 .georgia-pro-light {
   font-family: "Georgia Pro Light", serif;
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 .poppins-light {
   font-family: "Poppins", sans-serif;
