@@ -56,7 +56,7 @@ export default function Journey() {
         ScrollTrigger.create({
           trigger: sectionRef.current,
           start: "top top",
-          end: "+=400%",
+          end: "+=175%",
           scrub: 1,
           pin: true,
           pinSpacing: true,
