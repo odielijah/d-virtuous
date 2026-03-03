@@ -49,7 +49,7 @@ export default function Hero() {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
       id="hero"
-      className="p-[32px] sticky pointer-events-none flex flex-col flex-none items-center gap-[32px] z-[2] w-full h-screen max-h-[1000px] top-0 overflow-hidden
+      className="p-[32px] bg-white sticky pointer-events-none flex flex-col flex-none items-center gap-[32px] z-[2] w-full h-screen max-h-[1000px] top-0 overflow-hidden
       max-xl:p-[16px] max-lg:max-h-[645px]"
     >
       <motion.div
@@ -57,20 +57,13 @@ export default function Hero() {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1, ease: easeInOut }}
         id="rounded-container"
-        className="z-[1] relative overflow-hidden max-w-[1536px] rounded-[16px] bg-[radial-gradient(55%_94%_at_48.7%_6.5%,_#fa6800_0%,_#c00_48.1595%,_#0f0f0f_100%)] flex flex-col flex-[1_0_0] items-center w-full h-full p-0 pointer-events-auto"
+        className="z-[1] relative overflow-hidden max-w-[1536px] rounded-[16px] bg-[radial-gradient(circle_at_50%_0%,_#A551FF_0%,_#5800B7_100%)] flex flex-col flex-[1_0_0] items-center w-full h-full p-0 pointer-events-auto"
       >
         <div
           id="waves"
           className="absolute inset-[-172px_0_0] z-[1] pointer-events-none flex-none overflow-visible opacity-50 [mask:linear-gradient(#000_47%,_#0000_156%)] [-webkit-mask:linear-gradient(#000_47%,_#0000_156%)]"
         >
-          <div id="hero-img-container" className="absolute inset-0">
-            <img
-              src={heroImage}
-              loading="eager"
-              alt=""
-              className="block w-full h-full object-cover object-center rounded-inherit"
-            />
-          </div>
+          <div id="hero-img-container" className="absolute inset-0"></div>
         </div>
         <div
           id="hero-text-content"
@@ -85,7 +78,7 @@ export default function Hero() {
             <br />
             between vision &amp; impact
           </p>
-          <p className="poppins text-[20px] max-md:text-[16px]">
+          <p className="sora text-[20px] max-md:text-[16px]">
             That's where we thrive.
           </p>
         </div>
@@ -94,7 +87,7 @@ export default function Hero() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 1.4, ease: [0.22, 1, 0.36, 1] }}
           id="time"
-          className="absolute bottom-[24px] z-[1] left-[24px] poppins-light text-[14px] max-[500px]:text-[12px] text-[#ffffffb5] opacity-60"
+          className="absolute bottom-[24px] z-[1] left-[24px] sora-light text-[14px] max-[500px]:text-[12px] text-[#ffffffb5] opacity-60"
         >
           {/* Render time, then render period in a conditional span */}
           {time} <span className="max-[500px]:hidden">{period}</span>
@@ -105,7 +98,7 @@ export default function Hero() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 1.2, ease: [0.22, 1, 0.36, 1] }}
           id="scroll-to-explore"
-          className="absolute bottom-[24px] z-[1] poppins-light text-[14px] bg-clip-text text-transparent 
+          className="absolute bottom-[24px] z-[1] sora-light text-[14px] bg-clip-text text-transparent 
           bg-[linear-gradient(to_right,rgba(255,255,255,0.5)_20%,#fff_50%,rgba(255,255,255,0.5)_80%)] 
           bg-[length:200%_auto] 
           animate-shimmer"
@@ -118,7 +111,7 @@ export default function Hero() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 1.6, ease: [0.22, 1, 0.36, 1] }}
           id="day"
-          className="absolute bottom-[24px] right-[24px] z-[1] poppins-light text-[14px] max-[500px]:text-[12px] text-[#ffffffb5] opacity-60"
+          className="absolute bottom-[24px] right-[24px] z-[1] sora-light text-[14px] max-[500px]:text-[12px] text-[#ffffffb5] opacity-60"
         >
           {day}
         </motion.div>

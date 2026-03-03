@@ -42,7 +42,7 @@ export default function Header({ handleScrollToSection }) {
         }}
         id="header-container"
         className={`
-          fixed left-1/2 -translate-x-1/2 z-[50] text-[#eae7e0] poppins-light
+          fixed left-1/2 -translate-x-1/2 z-[50] text-[#eae7e0] sora-light
           transition-all duration-500 ease-in-out top-[48px] ${
             isScrolled
               ? "max-w-[750px] px-4"
@@ -85,7 +85,7 @@ export default function Header({ handleScrollToSection }) {
           <div className="flex items-center gap-4">
             <a
               href="#donate"
-              className="hidden md:block text-sm poppins font-medium text-black bg-[#eae7e0] px-5 py-1.5 rounded-lg hover:bg-white transition-colors"
+              className="hidden md:block text-sm sora font-medium text-black bg-[#eae7e0] px-5 py-1.5 rounded-lg hover:bg-white transition-colors"
             >
               Donate
             </a>
@@ -130,7 +130,7 @@ export default function Header({ handleScrollToSection }) {
                 <button
                   key={link.name}
                   onClick={(e) => closeMenuAndScroll(e, link.id)}
-                  className="text-left text-[14px] poppind text-[#eae7e0]/80 hover:text-white transition-colors"
+                  className="text-left text-[14px] sora text-[#eae7e0]/80 hover:text-white transition-colors"
                 >
                   {link.name}
                 </button>
@@ -141,7 +141,7 @@ export default function Header({ handleScrollToSection }) {
             <div className="h-[1px] w-full bg-white/10" />
             <a
               href="#donate"
-              className="text-center text-black text-[14px] poppins bg-[#eae7e0] py-2.5 rounded-xl hover:bg-white transition-all active:scale-95"
+              className="text-center text-black text-[14px] sora bg-[#eae7e0] py-2.5 rounded-xl hover:bg-white transition-all active:scale-95"
             >
               Donate
             </a>

@@ -205,7 +205,7 @@ export default function Journey() {
 
               {/* Back: Details */}
               <div
-                className={`absolute shadow-[0_30px_80px_7px_rgba(0,0,0,0.35)] poppins w-full h-full [backface-visibility:hidden] [border-radius:inherit] overflow-hidden flex flex-col justify-between items-start [transform:rotateY(180deg)] p-7 xl:p-9 max-[1000px]:transform-none
+                className={`absolute shadow-[0_30px_80px_7px_rgba(0,0,0,0.35)] sora w-full h-full [backface-visibility:hidden] [border-radius:inherit] overflow-hidden flex flex-col justify-between items-start [transform:rotateY(180deg)] p-7 xl:p-9 max-[1000px]:transform-none
                 ${card.bgColor} ${card.textColor}`}
               >
                 <span className="opacity-40 text-sm font-medium">

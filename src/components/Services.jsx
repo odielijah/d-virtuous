@@ -36,7 +36,7 @@ export default function Services() {
             <span className="italic">With</span> our services
           </h1>
 
-          <p className="text-center text-[14px] opacity-60 poppins-light max-w-[250px] font-light">
+          <p className="text-center text-[14px] opacity-60 sora-light max-w-[250px] font-light">
             We help you achieve more at every stage of business growth
           </p>
         </div>
@@ -94,7 +94,7 @@ export default function Services() {
                       {service.servicesList.map((item) => (
                         <span
                           key={item}
-                          className="block poppins-light opacity-50 text-[12px] lg:text-[14px] leading-[2]"
+                          className="block sora-light opacity-50 text-[12px] lg:text-[14px] leading-[2]"
                         >
                           {item}
                         </span>

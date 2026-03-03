@@ -69,7 +69,7 @@ export default function Testimonials() {
           </motion.h1>
           <motion.p
             variants={itemVariants}
-            className="text-white/60 text-[14px] poppins-light max-w-[250px] mx-auto text-center"
+            className="text-white/60 text-[14px] sora-light max-w-[250px] mx-auto text-center"
           >
             With over 60 clients served, here's what they have to say
           </motion.p>
@@ -110,7 +110,7 @@ export default function Testimonials() {
                 {/* Main Card */}
                 <div
                   className="
-                    bg-[rgb(15,15,15)] border border-white/10 poppins-light 
+                    bg-[rgb(15,15,15)] border border-white/10 sora-light 
                     shadow-[inset_0px_1px_2px_0px_rgba(255,255,255,0.1)] rounded-[24px]
                     flex flex-col md:flex-row
                     w-full min-h-[320px] md:min-h-0 md:aspect-[2/1]
@@ -143,7 +143,7 @@ export default function Testimonials() {
                   {/* --- RIGHT COLUMN / CONTENT --- */}
                   <div className="flex flex-col justify-between text-left flex-1 relative z-10">
                     {/* Quote */}
-                    <p className="text-white/70 text-[15px] md:text-[clamp(14px,1.4vw,16px)] leading-relaxed poppins-light italic">
+                    <p className="text-white/70 text-[15px] md:text-[clamp(14px,1.4vw,16px)] leading-relaxed sora-light italic">
                       "{item.quote}"
                     </p>
 

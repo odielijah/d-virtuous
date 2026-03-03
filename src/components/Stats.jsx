@@ -38,10 +38,10 @@ export default function Stats() {
 
             {/* Text Section */}
             <div className="flex flex-col w-full text-center md:text-left max-w-[470px] md:max-w-[370px]">
-              <h3 className="text-[18px] poppins-light font-normal text-gray-100 mb-2 md:mb-3">
+              <h3 className="text-[18px] sora-light font-normal text-gray-100 mb-2 md:mb-3">
                 {stat.title}
               </h3>
-              <p className="text-white/50 poppins-light text-[14px] leading-relaxed font-light">
+              <p className="text-white/50 sora-light text-[14px] leading-relaxed font-light">
                 {stat.description}
               </p>
             </div>

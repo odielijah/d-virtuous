@@ -42,7 +42,7 @@ export default function Founders() {
           </motion.h1>
           <motion.p
             variants={itemVariants}
-            className="text-white/60 text-[14px] poppins-light max-w-[300px] mx-auto text-center"
+            className="text-white/60 text-[14px] sora-light max-w-[300px] mx-auto text-center"
           >
             We're always up for a good coffee chat
           </motion.p>
@@ -96,13 +96,13 @@ export default function Founders() {
                 >
                   {founder.name}
                 </h3>
-                <p className="text-[12px] mt-2 poppins-light max-w-[170px] mx-auto opacity-40 uppercase tracking-[0.1em] font-light">
+                <p className="text-[12px] mt-2 sora-light max-w-[170px] mx-auto opacity-40 uppercase tracking-[0.1em] font-light">
                   {founder.role}
                 </p>
               </div>
 
               {/* Bottom Social Links */}
-              <div className="w-full pt-6 flex justify-center gap-6 poppins-light">
+              <div className="w-full pt-6 flex justify-center gap-6 sora-light">
                 {founder.socials.map(({ Icon, href, label }) => (
                   <motion.a
                     key={label}

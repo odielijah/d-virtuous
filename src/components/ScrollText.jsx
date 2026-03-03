@@ -137,7 +137,7 @@ export default function ScrollText() {
       <div className="w-full flex items-center justify-center gap-[50px] max-w-[1400px] mx-auto text-white pb-[5rem] px-10 max-md:flex-col">
         <div className="flex items-center gap-3 opacity-70 select-none shrink-0">
           <LeftWreath className="max-md:w-[25px]" />
-          <div className="text-center poppins leading-[1.3] text-[14px] max-md:text-[12px]">
+          <div className="text-center sora leading-[1.3] text-[14px] max-md:text-[12px]">
             <p className="mb-1">Trusted by 60+</p>
             <p>Organizations</p>
           </div>
