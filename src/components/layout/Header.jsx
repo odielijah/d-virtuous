@@ -43,15 +43,15 @@ export default function Header({ handleScrollToSection }) {
         id="header-container"
         className={`
           fixed left-1/2 -translate-x-1/2 z-[50] text-[#eae7e0] sora-light
-          transition-all duration-500 ease-in-out top-[48px] ${
+          transition-all duration-500 ease-in-out top-[8%] ${
             isScrolled
-              ? "max-w-[750px] px-4"
+              ? "max-w-[800px] px-4"
               : "max-w-[1400px] px-[64px] max-xl:px-[35px] max-xl:top-[30px]"
           } w-full`}
       >
         <div
           id="nav-content"
-          className="relative flex justify-between items-center w-full backdrop-blur-md bg-black/30 rounded-2xl shadow-[inset_0_1px_1px_1px_rgba(255,255,255,0.1)] p-3 pl-6"
+          className="relative flex justify-between items-center w-full backdrop-blur-md bg-[#300062] border-1 border-[#C690FF] rounded-2xl shadow-[inset_0_1px_1px_1px_rgba(255,255,255,0.1)] p-5 pl-6"
         >
           <div id="logo" className="relative z-[999]">
             <a
@@ -70,7 +70,7 @@ export default function Header({ handleScrollToSection }) {
           </div>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex gap-10 text-sm tracking-wide opacity-80">
+          <nav className="hidden md:flex gap-15 text-sm tracking-wide">
             {navLinks.map((link) => (
               <button
                 key={link.name}
@@ -85,7 +85,7 @@ export default function Header({ handleScrollToSection }) {
           <div className="flex items-center gap-4">
             <a
               href="#donate"
-              className="hidden md:block text-sm sora font-medium text-black bg-[#eae7e0] px-5 py-1.5 rounded-lg hover:bg-white transition-colors"
+              className="hidden md:block text-sm sora font-medium text-black bg-[#eae7e0] px-5 py-2 rounded-lg hover:bg-white transition-colors"
             >
               Donate
             </a>

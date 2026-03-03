@@ -57,40 +57,49 @@ export default function Hero() {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1, ease: easeInOut }}
         id="rounded-container"
-        className="z-[1] relative overflow-hidden max-w-[1536px] rounded-[16px] bg-[radial-gradient(circle_at_50%_0%,_#A551FF_0%,_#5800B7_100%)] flex flex-col flex-[1_0_0] items-center w-full h-full p-0 pointer-events-auto"
+        className="z-[1] relative overflow-hidden max-w-[1536px] rounded-[16px] bg-[radial-gradient(60%_100%_at_50%_0%,_#A551FF_0%,_#5800B7_100%)] flex flex-col flex-[1_0_0] items-center w-full h-full p-0 pointer-events-auto"
       >
         <div
           id="waves"
-          className="absolute inset-[-172px_0_0] z-[1] pointer-events-none flex-none overflow-visible opacity-50 [mask:linear-gradient(#000_47%,_#0000_156%)] [-webkit-mask:linear-gradient(#000_47%,_#0000_156%)]"
+          className="absolute inset-[-172px_0_0] z-[1] flex-none overflow-visible opacity-50 [mask:linear-gradient(#000_47%,_#0000_156%)] [-webkit-mask:linear-gradient(#000_47%,_#0000_156%)]"
         >
           <div id="hero-img-container" className="absolute inset-0"></div>
         </div>
+
         <div
           id="hero-text-content"
-          className="flex [text-shadow:0_0_12px_#ffffffb5] max-md:text-white pointer-events-none text-[#ffffffb5] justify-center text-center items-center flex-col h-full gap-[8px] w-full opacity-90 z-[2] relative"
+          className="flex max-md:text-white pointer-events-none mt-[5rem] text-white justify-center text-center items-center flex-col h-full gap-[8px] w-full opacity-90 z-[2] relative"
         >
-          <p
-            className="georgia-pro-light xl:text-[50px] leading-[1] tracking-[-0.02em]
-          md:text-[40px] min-[300px]:text-[30px]"
+          <h1
+            className="georgia-pro-semibold xl:text-[60px] max-w-[600px] mx-auto capitalize leading-[1.1]
+          md:text-[40px] min-[300px]:text-[30px] mb-[20px]"
           >
-            {" "}
-            Imagine a space
-            <br />
-            between vision &amp; impact
+            be part of something bigger
+          </h1>
+          <p className="sora text-[20px] max-md:text-[16px] mx-auto max-w-[600px] mb-[20px]">
+            Together, we can restore hope, rebuild lives, and create lasting
+            change where it’s needed most.
           </p>
-          <p className="sora text-[20px] max-md:text-[16px]">
-            That's where we thrive.
-          </p>
+          <div class="flex flex-wrap justify-center gap-10 p-6 mb-[2rem]">
+            <div class="w-55 h-55 bg-white rounded-[20px] shadow-md"></div>
+            <div class="w-55 h-55 bg-white rounded-[20px] shadow-md"></div>
+            <div class="w-55 h-55 bg-white rounded-[20px] shadow-md"></div>
+            <div class="w-55 h-55 bg-white rounded-[20px] shadow-md"></div>
+            <div class="w-55 h-55 bg-white rounded-[20px] shadow-md"></div>
+          </div>
+          <button className="sora border-1 text-[22px] py-3 px-12 rounded-[13px]">
+            Donate
+          </button>
         </div>
         <motion.div
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 1.4, ease: [0.22, 1, 0.36, 1] }}
           id="time"
-          className="absolute bottom-[24px] z-[1] left-[24px] sora-light text-[14px] max-[500px]:text-[12px] text-[#ffffffb5] opacity-60"
+          className="absolute bottom-[24px] z-[1] left-[24px] sora-light text-[14px] max-[500px]:text-[12px] text-white"
         >
           {/* Render time, then render period in a conditional span */}
-          {time} <span className="max-[500px]:hidden">{period}</span>
+          {time}<span className="max-[500px]:hidden lowercase">{period}</span>
         </motion.div>
 
         <motion.div
@@ -111,7 +120,7 @@ export default function Hero() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 1.6, ease: [0.22, 1, 0.36, 1] }}
           id="day"
-          className="absolute bottom-[24px] right-[24px] z-[1] sora-light text-[14px] max-[500px]:text-[12px] text-[#ffffffb5] opacity-60"
+          className="absolute bottom-[24px] right-[24px] z-[1] sora-light text-[14px] max-[500px]:text-[12px] text-white"
         >
           {day}
         </motion.div>

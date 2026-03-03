@@ -12,6 +12,13 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Georgia Pro Semibold";
+  src: url("/fonts/GeorgiaPro-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --swiper-navigation-color: #ffffff;
@@ -27,6 +34,12 @@ body {
 }
 
 /* fonts */
+.georgia-pro-semibold {
+  font-family: "Georgia Pro Semibold", serif;
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
 .georgia-pro-cond-italic {
   font-family: "Georgia Pro Cond", serif;
   font-weight: 400;
