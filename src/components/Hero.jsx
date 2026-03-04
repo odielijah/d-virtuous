@@ -49,7 +49,7 @@ export default function Hero() {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
       id="hero"
-      className="p-[32px] bg-white sticky pointer-events-none flex flex-col flex-none items-center gap-[32px] z-[2] w-full h-screen max-h-[1000px] top-0 overflow-hidden
+      className="p-[32px] bg-white sticky flex flex-col flex-none items-center gap-[32px] z-[2] w-full h-screen max-h-[1000px] top-0 overflow-hidden
       max-xl:p-[16px] max-lg:max-h-[645px]"
     >
       <motion.div
@@ -68,7 +68,7 @@ export default function Hero() {
 
         <div
           id="hero-text-content"
-          className="flex max-md:text-white pointer-events-none mt-[5rem] text-white justify-center text-center items-center flex-col h-full gap-[8px] w-full opacity-90 z-[2] relative"
+          className="flex max-md:text-white text-white justify-center text-center items-center flex-col h-full gap-[8px] w-full opacity-90 z-[2] relative"
         >
           <h1
             className="georgia-pro-semibold xl:text-[60px] max-w-[600px] mx-auto capitalize leading-[1.1]
@@ -87,9 +87,15 @@ export default function Hero() {
             <div class="w-55 h-55 bg-white rounded-[20px] shadow-md"></div>
             <div class="w-55 h-55 bg-white rounded-[20px] shadow-md"></div>
           </div>
-          <button className="sora border-1 text-[22px] py-3 px-12 rounded-[13px]">
+          <motion.button
+            whileHover={{
+              transition: "border",
+              border: "1px solid rgb(204, 164, 255)",
+            }}
+            className="sora cursor-pointer pointer-events-auto border border-white text-[22px] py-3 px-12 rounded-[13px] transition-colors"
+          >
             Donate
-          </button>
+          </motion.button>
         </div>
         <motion.div
           initial={{ y: 100, opacity: 0 }}
@@ -99,7 +105,8 @@ export default function Hero() {
           className="absolute bottom-[24px] z-[1] left-[24px] sora-light text-[14px] max-[500px]:text-[12px] text-white"
         >
           {/* Render time, then render period in a conditional span */}
-          {time}<span className="max-[500px]:hidden lowercase">{period}</span>
+          {time}
+          <span className="max-[500px]:hidden lowercase">{period}</span>
         </motion.div>
 
         <motion.div
