@@ -92,25 +92,25 @@ export default function Testimonials() {
             slidesPerView={1}
             spaceBetween={200}
             coverflowEffect={{
-              rotate: -10,
+              rotate: 0,
               stretch: 0,
               depth: 400,
               modifier: 1,
               slideShadows: false,
             }}
             navigation={true}
-            className="testimonial-swiper !overflow-visible transition-all duration-500"
+            className="testimonial-swiper !overflow-visible transition-opacity ease-in-out duration-500"
             style={{ paddingBottom: "3rem", paddingTop: "1rem" }}
           >
             {testimonials.map((item, index) => (
               <SwiperSlide
                 key={`${item.id}-${index}`}
-                className="!flex items-center justify-center opacity-30 transition-all duration-500 ease-in-out"
+                className="!flex items-center justify-center opacity-30 transition-opacity duration-500 ease-in-out"
               >
                 {/* Main Card */}
                 <div
                   className="
-                    bg-[rgb(186,186,186)] border border-white/10 sora-light 
+                    bg-[rgb(240,240,240)] border border-black/10 sora-light 
                     shadow-[inset_0px_1px_2px_0px_rgba(255,255,255,0.1)] rounded-[24px]
                     flex flex-col md:flex-row
                     w-full min-h-[320px] md:min-h-0 md:aspect-[2/1]
@@ -131,10 +131,10 @@ export default function Testimonials() {
 
                     {/* Mobile Only: Name and Role next to avatar */}
                     <div className="flex flex-col md:hidden">
-                      <h4 className="text-white text-[16px] font-medium leading-tight">
+                      <h4 className="text-black/80 text-[16px] font-medium leading-tight">
                         {item.name}
                       </h4>
-                      <p className="text-white/40 text-[13px] mt-1">
+                      <p className="text-black/40 text-[13px] mt-1">
                         {item.role}
                       </p>
                     </div>
