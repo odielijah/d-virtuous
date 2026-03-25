@@ -24,7 +24,7 @@ export default function Donate() {
   return (
     <section
       id="donate"
-      className="w-full bg-black z-[2] relative py-32 max-lg:py-10 text-white"
+      className="w-full bg-white z-[2] relative py-32 max-lg:py-10 text-white"
     >
       <motion.div
         initial="hidden"
@@ -36,14 +36,14 @@ export default function Donate() {
         {/* Main Title */}
         <motion.h1
           variants={itemVariants}
-          className="text-white text-[60px] max-lg:text-[35px] georgia-pro-light leading-[1] [text-shadow:0_0_10px_rgba(255,255,255,0.8)] tracking-[-0.02em] mb-2"
+          className="text-black/80 text-[60px] max-lg:text-[35px] georgia-pro-light leading-[1] [text-shadow:0_0_10px_rgba(255,255,255,0.8)] tracking-[-0.02em] mb-2"
         >
           Donate?
         </motion.h1>
 
         <motion.p
           variants={itemVariants}
-          className="text-white/50 text-[14px] max-w-[250px] mx-auto sora-light"
+          className="text-black/50 text-[14px] max-w-[250px] mx-auto sora-light"
         >
           Any amount goes a long way
         </motion.p>

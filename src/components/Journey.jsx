@@ -161,7 +161,7 @@ export default function Journey() {
   return (
     <section
       id="journey"
-      className="min-h-screen pb-[100px] w-full bg-black relative z-[2] max-w-[1560px]"
+      className="min-h-screen pb-[100px] w-full bg-white relative z-[2]"
       style={{
         backgroundImage: "radial-gradient(#333 1px, transparent 1px)",
         backgroundSize: "30px 30px",
@@ -176,7 +176,7 @@ export default function Journey() {
           id="sticky-header"
           className="text-white translate-y-[-50%] max-[1000px]:relative max-[1000px]:top-0 max-[1000px]:left-0 max-[1000px]:transform-none max-[1000px]:mb-[1rem] max-[1000px]:mt-[8rem]"
         >
-          <h1 className="relative georgia-pro-light text-[45px] text-center leading-[1] [text-shadow:0_0_10px_rgba(255,255,255,0.8)] tracking-[-0.02em] translate-y-[40px] opacity-0 [will-change:transform,opacity] max-[1000px]:opacity-10 max-[1000px]:text-[35px] max-[1000px]:px-[1rem]">
+          <h1 className="relative georgia-pro-light text-[45px] text-black/80 text-center leading-[1] [text-shadow:0_0_10px_rgba(255,255,255,0.8)] tracking-[-0.02em] translate-y-[40px] opacity-0 [will-change:transform,opacity] max-[1000px]:opacity-10 max-[1000px]:text-[35px] max-[1000px]:px-[1rem]">
             Where are you <span className="italic">in</span> your journey?
           </h1>
         </div>

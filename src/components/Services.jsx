@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react"; // Added useEffect to track screen size
+import { useState } from "react"; // Added useEffect to track screen size
 import { services } from "../data/servicesData";
-import { easeOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function Services() {
   const [openServiceId, setOpenServiceId] = useState(null);
@@ -27,16 +27,16 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="w-full bg-black z-[2] relative py-40 max-lg:py-20 text-white overflow-x-hidden"
+      className="w-full bg-white z-[2] relative py-40 max-lg:py-20 text-white overflow-x-hidden"
     >
       <div className="w-full max-w-[1220px] mx-auto px-10 max-md:px-5">
         {/* --- Header Section --- */}
         <div className="flex justify-center flex-col items-center w-full mb-24 max-md:mb-12">
-          <h1 className="text-[60px] leading-[1] georgia-pro-light [text-shadow:0_0_10px_rgba(255,255,255,0.8)] text-center tracking-[-0.02em] mb-4 max-lg:text-[35px]">
+          <h1 className="text-[60px] leading-[1] text-black opacity-80 georgia-pro-light [text-shadow:0_0_10px_rgba(255,255,255,0.8)] text-center tracking-[-0.02em] mb-4 max-lg:text-[35px]">
             <span className="italic">With</span> our services
           </h1>
 
-          <p className="text-center text-[14px] opacity-60 sora-light max-w-[250px] font-light">
+          <p className="text-center text-[14px] text-black opacity-60 sora-light max-w-[250px] font-light">
             We help you achieve more at every stage of business growth
           </p>
         </div>
@@ -65,11 +65,11 @@ export default function Services() {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
                 onClick={() => toggleService(service.id)}
-                className="flex w-full py-16 border-b border-white/20 items-start justify-center cursor-pointer max-md:flex-col max-md:gap-6 max-md:py-8"
+                className="flex w-full py-16 border-b border-black/20 items-start justify-center cursor-pointer max-md:flex-col max-md:gap-6 max-md:py-8"
               >
                 {/* --- Column 1: Title --- */}
-                <div className="flex flex-col gap-2 w-[30%] max-md:w-full max-md:flex-row max-md:justify-between max-md:items-center">
-                  <h1 className="georgia-pro-light text-[32px] lg:text-[40px]">
+                <div className="flex flex-col gap-2 w-[30%] text-black opacity-80 max-md:w-full max-md:flex-row max-md:justify-between max-md:items-center">
+                  <h1 className="georgia-pro-light text-black text-[32px] lg:text-[40px]">
                     {service.title}
                   </h1>
                   <div className="hidden max-md:flex items-center justify-center w-8 h-8">
@@ -94,7 +94,7 @@ export default function Services() {
                       {service.servicesList.map((item) => (
                         <span
                           key={item}
-                          className="block sora-light opacity-50 text-[12px] lg:text-[14px] leading-[2]"
+                          className="block sora-light text-black opacity-50 text-[12px] lg:text-[14px] leading-[2]"
                         >
                           {item}
                         </span>

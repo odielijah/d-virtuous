@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { founders } from "../data/foundersData";
-import { div } from "framer-motion/client";
 
 export default function Founders() {
   const containerVariants = {
@@ -22,7 +21,7 @@ export default function Founders() {
   return (
     <section
       id="founders"
-      className="w-full bg-black z-[2] py-20 max-lg:py-20 text-white my-[-5px]"
+      className="w-full bg-white z-[2] py-20 max-lg:py-20 text-white my-[-5px]"
     >
       <div className="max-w-[1200px] mx-auto flex flex-col items-center">
         {/* --- Header --- */}
@@ -35,14 +34,14 @@ export default function Founders() {
         >
           <motion.h1
             variants={itemVariants}
-            className="text-white max-lg:text-[35px] text-[60px] georgia-pro-light leading-[1] md:leading-[1.1] 
+            className="text-black/80 max-lg:text-[35px] text-[60px] georgia-pro-light leading-[1] md:leading-[1.1] 
             [text-shadow:0_0_10px_rgba(255,255,255,0.8)] tracking-[-0.02em] mb-4"
           >
             Meet the <span className="italic">founders</span>
           </motion.h1>
           <motion.p
             variants={itemVariants}
-            className="text-white/60 text-[14px] sora-light max-w-[300px] mx-auto text-center"
+            className="text-black/50 text-[14px] sora-light max-w-[300px] mx-auto text-center"
           >
             We're always up for a good coffee chat
           </motion.p>

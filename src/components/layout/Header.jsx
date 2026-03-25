@@ -51,7 +51,7 @@ export default function Header({ handleScrollToSection }) {
       >
         <div
           id="nav-content"
-          className="relative flex justify-between items-center w-full backdrop-blur-md bg-[#300062]/75 border-1 border-[#C690FF] rounded-2xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.2),0_4px_30px_rgba(0,0,0,0.1)] p-3 pl-6"
+          className="relative flex justify-between items-center w-full backdrop-blur-md bg-black/75 rounded-2xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.2),0_4px_30px_rgba(0,0,0,0.1)] p-3 pl-6"
         >
           <div id="logo" className="relative z-[999]">
             <a

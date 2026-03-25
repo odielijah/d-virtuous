@@ -1,6 +1,5 @@
 import dayjs from "dayjs";
 import { useState, useEffect } from "react";
-import heroImage from "../assets/images/hero-image.avif";
 import { easeInOut, motion } from "framer-motion";
 
 export default function Hero() {

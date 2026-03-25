@@ -38,8 +38,8 @@ const TextReveal = ({ verse }) => {
         ".char",
         { opacity: 0.2, color: "#444" },
         {
-          opacity: 1,
-          color: "white",
+          opacity: 0.8,
+          color: "black",
           duration: 1,
           stagger: 0.02,
           scrollTrigger: {
@@ -71,7 +71,7 @@ const TextReveal = ({ verse }) => {
   );
 
   return (
-    <div ref={container} className="max-w-[1150px] mx-auto text-center">
+    <div ref={container} className="max-w-[1150px] z-10 mx-auto text-center">
       <div className="leading-[1.1] tracking-tight">
         {words.map((word, i) => (
           <span
@@ -115,7 +115,7 @@ export default function ScrollText() {
   return (
     <section
       id="scroll-text"
-      className="h-screen w-full bg-black relative z-[2] max-w-[1560px] flex flex-col max-md:h-[800px]"
+      className="h-screen w-full bg-white relative z-[2] flex flex-col max-md:h-[800px]"
       style={{
         backgroundImage: "radial-gradient(#333 1px, transparent 1px)",
         backgroundSize: "30px 30px",
@@ -126,7 +126,7 @@ export default function ScrollText() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
-        className="relative z-10 flex-1 w-full text-white p-10 max-md:p-4 flex justify-center items-center text-center georgia-pro-light text-[35px] min-[1000px]:text-[50px] min-[1300px]:text-[60px]"
+        className="relative z-10 flex-1 w-full text-black p-10 max-md:p-4 flex justify-center items-center text-center georgia-pro-light text-[35px] min-[1000px]:text-[50px] min-[1300px]:text-[60px]"
       >
         <motion.div variants={itemVariants}>
           <TextReveal verse={selectedVerse} />
@@ -134,7 +134,7 @@ export default function ScrollText() {
       </motion.div>
 
       {/* Marquee Section */}
-      <div className="w-full flex items-center justify-center gap-[50px] max-w-[1400px] mx-auto text-white pb-[5rem] px-10 max-md:flex-col">
+      <div className="w-full flex items-center justify-center gap-[50px] max-w-[1400px] mx-auto !text-black pb-[5rem] px-10 max-md:flex-col">
         <div className="flex items-center gap-3 opacity-70 select-none shrink-0">
           <LeftWreath className="max-md:w-[25px]" />
           <div className="text-center sora leading-[1.3] text-[14px] max-md:text-[12px]">

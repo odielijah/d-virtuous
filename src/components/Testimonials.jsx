@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Navigation } from "swiper/modules";
 import { motion } from "framer-motion";
@@ -50,7 +50,7 @@ export default function Testimonials() {
   return (
     <section
       id="reviews"
-      className="bg-black z-[2] w-full overflow-hidden my-[-5px]"
+      className="bg-white z-[2] w-full overflow-hidden my-[-5px]"
     >
       <div className="w-full min-h-screen relative text-white flex flex-col justify-center py-15 md:py-20">
         {/* Header */}
@@ -63,13 +63,13 @@ export default function Testimonials() {
         >
           <motion.h1
             variants={itemVariants}
-            className="text-white max-lg:text-[35px] text-[60px] georgia-pro-light leading-[1] md:leading-[1.1] [text-shadow:0_0_10px_rgba(255,255,255,0.8)] tracking-[-0.02em] mb-4"
+            className="text-black/80 max-lg:text-[35px] text-[60px] georgia-pro-light leading-[1] md:leading-[1.1] [text-shadow:0_0_10px_rgba(255,255,255,0.8)] tracking-[-0.02em] mb-4"
           >
             Hear <span className="italic">from</span> our partners
           </motion.h1>
           <motion.p
             variants={itemVariants}
-            className="text-white/60 text-[14px] sora-light max-w-[250px] mx-auto text-center"
+            className="text-black/60 text-[14px] sora-light max-w-[250px] mx-auto text-center"
           >
             With over 60 clients served, here's what they have to say
           </motion.p>
@@ -105,12 +105,12 @@ export default function Testimonials() {
             {testimonials.map((item, index) => (
               <SwiperSlide
                 key={`${item.id}-${index}`}
-                className="!flex items-center justify-center opacity-30 transition-all duration-500"
+                className="!flex items-center justify-center opacity-30 transition-all duration-500 ease-in-out"
               >
                 {/* Main Card */}
                 <div
                   className="
-                    bg-[rgb(15,15,15)] border border-white/10 sora-light 
+                    bg-[rgb(38,38,38)] border border-white/10 sora-light 
                     shadow-[inset_0px_1px_2px_0px_rgba(255,255,255,0.1)] rounded-[24px]
                     flex flex-col md:flex-row
                     w-full min-h-[320px] md:min-h-0 md:aspect-[2/1]
@@ -182,8 +182,8 @@ export default function Testimonials() {
                   onClick={() => handleDotClick(index)}
                   className={`transition-all duration-500 rounded-full cursor-pointer ${
                     isActive
-                      ? "w-[5px] h-[5px] bg-white shadow-[0_0_15px_rgba(255,255,255,0.8)] opacity-100"
-                      : "w-[5px] h-[5px] bg-white opacity-20 hover:opacity-50"
+                      ? "w-[5px] h-[5px] bg-black/80 shadow-[0_0_15px_rgba(255,255,255,0.8)] opacity-100"
+                      : "w-[5px] h-[5px] bg-black opacity-20 hover:opacity-50"
                   }`}
                 />
               );

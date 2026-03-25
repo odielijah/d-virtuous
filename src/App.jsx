@@ -79,7 +79,7 @@ function App() {
       {/* 7. Hides the 'glitch' by keeping opacity at 0 until the jump is done */}
       <div 
         className={`transition-opacity duration-500 ease-in-out ${isLoaded ? "opacity-100" : "opacity-0"}`}
-        style={{ backgroundColor: 'black' }} // Matches your site theme to hide white flashes
+        style={{ backgroundColor: 'white' }} // Matches your site theme to hide white flashes
       >
         <Header handleScrollToSection={handleScrollToSection} />
 
