@@ -110,7 +110,7 @@ export default function Testimonials() {
                 {/* Main Card */}
                 <div
                   className="
-                    bg-[rgb(38,38,38)] border border-white/10 sora-light 
+                    bg-[rgb(186,186,186)] border border-white/10 sora-light 
                     shadow-[inset_0px_1px_2px_0px_rgba(255,255,255,0.1)] rounded-[24px]
                     flex flex-col md:flex-row
                     w-full min-h-[320px] md:min-h-0 md:aspect-[2/1]
@@ -143,25 +143,25 @@ export default function Testimonials() {
                   {/* --- RIGHT COLUMN / CONTENT --- */}
                   <div className="flex flex-col justify-between text-left flex-1 relative z-10">
                     {/* Quote */}
-                    <p className="text-white/70 text-[15px] md:text-[clamp(14px,1.4vw,16px)] leading-relaxed sora-light italic">
+                    <p className="text-black/60 text-[15px] md:text-[clamp(14px,1.4vw,16px)] leading-relaxed sora-light italic">
                       "{item.quote}"
                     </p>
 
                     {/* Footer Row */}
-                    <div className="mt-6 md:mt-auto pt-4 md:border-t md:border-white/10">
+                    <div className="mt-6 md:mt-auto pt-4 md:border-t md:border-black/10">
                       <div className="flex justify-between items-end">
                         {/* Desktop Only: Name and Role in footer */}
                         <div className="hidden md:block">
-                          <h4 className="text-white text-[clamp(16px,1.8vw,18px)] font-medium">
+                          <h4 className="text-black/80 text-[clamp(16px,1.8vw,18px)] font-medium">
                             {item.name}
                           </h4>
-                          <p className="text-white/40 text-[clamp(12px,1.3vw,14px)] mt-1">
+                          <p className="text-black/40 text-[clamp(12px,1.3vw,14px)] mt-1">
                             {item.role}
                           </p>
                         </div>
 
                         {/* Company Logo/Text (Always bottom right) */}
-                        <span className="text-white/40 text-[14px] md:text-[clamp(10px,1.1vw,12px)] font-bold tracking-widest uppercase">
+                        <span className="text-black/40 text-[14px] md:text-[clamp(10px,1.1vw,12px)] font-bold tracking-widest uppercase">
                           {item.company}
                         </span>
                       </div>

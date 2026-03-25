@@ -66,7 +66,7 @@ export default function Founders() {
               transition={{ duration: 0.2, ease: [0.34, 1.56, 0.64, 1] }}
               className="relative w-full flex h-full max-w-[280px] min-h-[370px]
               bg-[linear-gradient(rgb(31,31,31)_0%,rgb(22,22,22)_100%)]
-              shadow-[-12px_12px_32px_rgba(7,0,0,0.6),-4px_4px_12px_rgba(0,0,0,0.5)]
+              shadow-[-12px_12px_32px_rgba(0,0,0,0.4),-4px_4px_12px_rgba(0,0,0,0.3)]
               border border-white/5 rounded-[10px] 
               p-8 px-13 flex flex-col justify-center items-center cursor-pointer will-change-transform [backface-visibility:hidden]"
             >
