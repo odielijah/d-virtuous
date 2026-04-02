@@ -4,6 +4,7 @@ import { easeInOut, motion } from "framer-motion";
 
 export default function Header({ handleScrollToSection }) {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isActive, setIsActive] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -75,7 +76,7 @@ export default function Header({ handleScrollToSection }) {
               <button
                 key={link.name}
                 onClick={(e) => handleScrollToSection(e, link.id)}
-                className="hover:opacity-100 hover:text-white transition-all duration-300"
+                className={`${isScrolled ? "font-bold" : ""} hover:opacity-100 hover:text-white transition-all duration-300`}
               >
                 {link.name}
               </button>

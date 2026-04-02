@@ -1,46 +1,57 @@
-import dayjs from "dayjs";
+// import dayjs from "dayjs";
 import { useState, useEffect } from "react";
-import { easeInOut, motion } from "framer-motion";
+import { easeInOut, motion, AnimatePresence } from "framer-motion";
+
+import heroImg1 from "../assets/images/top-view-mother-kid-laying-grass 2.png";
+import heroImg2 from "../assets/images/group-african-kids-learning-together 1.png"; // replace with your actual paths
+import heroImg3 from "../assets/images/happy-friends-hugging-medium-shot 1.png";
+import heroImg4 from "../assets/images/Layer 2 1.png";
+import heroImg5 from "../assets/images/smiley-young-african-boy-standing-field 1.png";
+
+
+const heroImages = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5];
+const SLIDE_DURATION = 8000; // ms each image stays visible
 
 export default function Hero() {
-  // Display Time
-  function useCurrentTime() {
-    // 1. Initialize state as an object so we can split the data
-    const [timeData, setTimeData] = useState({
-      time: dayjs().format("h:mm"),
-      period: dayjs().format("A"),
-    });
+  // --- Slideshow state ---
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-    useEffect(() => {
-      const intervalId = setInterval(() => {
-        // 2. Update both parts separately
-        setTimeData({
-          time: dayjs().format("h:mm"),
-          period: dayjs().format("A"),
-        });
-      }, 1000); // Check every second (cleaner for clock sync) or keep 60000
-      return () => clearInterval(intervalId);
-    }, []);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % heroImages.length);
+    }, SLIDE_DURATION);
+    return () => clearInterval(timer);
+  }, []);
 
-    return timeData;
-  }
+  // // --- Clock ---
+  // function useCurrentTime() {
+  //   const [timeData, setTimeData] = useState({
+  //     time: dayjs().format("h:mm"),
+  //     period: dayjs().format("A"),
+  //   });
+  //   useEffect(() => {
+  //     const id = setInterval(() => {
+  //       setTimeData({
+  //         time: dayjs().format("h:mm"),
+  //         period: dayjs().format("A"),
+  //       });
+  //     }, 1000);
+  //     return () => clearInterval(id);
+  //   }, []);
+  //   return timeData;
+  // }
+  // const { time, period } = useCurrentTime();
 
-  // 3. Destructure the values here
-  const { time, period } = useCurrentTime();
-
-  // Display Day
-  function useCurrentDay() {
-    const [day, setDay] = useState(dayjs().format("ddd"));
-    useEffect(() => {
-      const intervalId = setInterval(
-        () => setDay(dayjs().format("ddd")),
-        60000,
-      );
-      return () => clearInterval(intervalId);
-    }, []);
-    return day;
-  }
-  const day = useCurrentDay();
+  // // --- Day ---
+  // function useCurrentDay() {
+  //   const [day, setDay] = useState(dayjs().format("ddd"));
+  //   useEffect(() => {
+  //     const id = setInterval(() => setDay(dayjs().format("ddd")), 60000);
+  //     return () => clearInterval(id);
+  //   }, []);
+  //   return day;
+  // }
+  // const day = useCurrentDay();
 
   return (
     <motion.section
@@ -56,57 +67,44 @@ export default function Hero() {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1, ease: easeInOut }}
         id="rounded-container"
-        className="z-[1] relative overflow-hidden max-w-[1536px] rounded-[16px] bg-[radial-gradient(60%_100%_at_50%_0%,_#A551FF_0%,_#5800B7_100%)] flex flex-col flex-[1_0_0] items-center w-full h-full p-0 pointer-events-auto"
+        className="relative w-full h-full max-w-[1536px] rounded-[24px] overflow-hidden flex items-center justify-center"
       >
-        <div
-          id="waves"
-          className="absolute inset-[-172px_0_0] z-[1] flex-none overflow-visible opacity-50 [mask:linear-gradient(#000_47%,_#0000_156%)] [-webkit-mask:linear-gradient(#000_47%,_#0000_156%)]"
-        >
-          <div id="hero-img-container" className="absolute inset-0"></div>
+        {/* Crossfading images */}
+        <AnimatePresence>
+          <motion.img
+            key={currentIndex}
+            src={heroImages[currentIndex]}
+            alt="Hero background"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+          />
+        </AnimatePresence>
+
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/20 to-[#391954] opacity-90" />
+
+        {/* Hero text content */}
+        <div className="relative z-10 w-full px-8 md:px-16 flex flex-col items-start md:flex-row md:justify-between md:items-end pb-20">
+          <h1 className="georgia-pro-semibold text-white text-5xl md:text-7xl lg:text-9xl leading-[0.9] tracking-tight max-w-xl">
+            Home for Women
+          </h1>
+          <h1 className="georgia-pro-semibold absolute -bottom-25 -right-0 text-white text-5xl md:text-7xl leading-[0.9] lg:text-9xl tracking-tight max-w-xl">
+            And Children
+          </h1>
         </div>
 
-        <div
-          id="hero-text-content"
-          className="flex max-md:text-white text-white justify-center text-center items-center flex-col h-full gap-[8px] w-full opacity-90 z-[2] relative"
-        >
-          <h1
-            className="georgia-pro-semibold xl:text-[60px] max-w-[600px] mx-auto capitalize leading-[1.1]
-          md:text-[40px] min-[300px]:text-[30px] mb-[20px]"
-          >
-            be part of something bigger
-          </h1>
-          <p className="sora text-[20px] max-md:text-[16px] mx-auto max-w-[600px] mb-[20px]">
-            Together, we can restore hope, rebuild lives, and create lasting
-            change where it’s needed most.
-          </p>
-          <div class="flex flex-wrap justify-center gap-10 p-6 mb-[2rem]">
-            <div class="w-55 h-55 bg-white rounded-[20px] shadow-md"></div>
-            <div class="w-55 h-55 bg-white rounded-[20px] shadow-md"></div>
-            <div class="w-55 h-55 bg-white rounded-[20px] shadow-md"></div>
-            <div class="w-55 h-55 bg-white rounded-[20px] shadow-md"></div>
-            <div class="w-55 h-55 bg-white rounded-[20px] shadow-md"></div>
-          </div>
-          <motion.button
-            whileHover={{
-              transition: "border",
-              border: "1px solid rgb(204, 164, 255)",
-            }}
-            className="sora cursor-pointer pointer-events-auto border border-white text-[22px] py-3 px-12 rounded-[13px] transition-colors"
-          >
-            Donate
-          </motion.button>
-        </div>
-        <motion.div
+        {/* <motion.div
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 1.4, ease: [0.22, 1, 0.36, 1] }}
           id="time"
           className="absolute bottom-[24px] z-[1] left-[24px] sora-light text-[14px] max-[500px]:text-[12px] text-white"
         >
-          {/* Render time, then render period in a conditional span */}
           {time}
           <span className="max-[500px]:hidden lowercase">{period}</span>
-        </motion.div>
+        </motion.div> */}
 
         <motion.div
           initial={{ y: 100, opacity: 0 }}
@@ -121,7 +119,7 @@ export default function Hero() {
           Scroll to Explore
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 1.6, ease: [0.22, 1, 0.36, 1] }}
@@ -129,7 +127,7 @@ export default function Hero() {
           className="absolute bottom-[24px] right-[24px] z-[1] sora-light text-[14px] max-[500px]:text-[12px] text-white"
         >
           {day}
-        </motion.div>
+        </motion.div> */}
       </motion.div>
     </motion.section>
   );
